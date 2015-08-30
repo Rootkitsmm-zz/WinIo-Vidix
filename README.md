@@ -54,5 +54,7 @@ fffff800`016c6884 488968f8        mov     qword ptr [rax-8],rbp
 >
 When the source or destination operand is a memory operand, the operand must be aligned on a 16-byte boundary or a general-protection exception (#GP) is generated.
 >
+
+
 so stack address must be  aligned:) i dont  fix this part in my code :))) 
 

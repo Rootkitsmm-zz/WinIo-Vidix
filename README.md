@@ -3,13 +3,13 @@
 Vidix: https://en.wikipedia.org/wiki/Vidix
 WinIo : http://www.internals.com/
 
-Exploit code for two driver that share  same piece of code for direct I/O port and physical memory access under Windows NT/2000/XP/2003/Vista/7 and 2008. 
+Exploit code for two drivers that share the same piece of code both for direct I/O port and for physical memory access under Windows NT/2000/XP/2003/Vista/7 and 2008.
 
-Exploit use  Buffer OvferFlow for gain code  execution but diffrent trick for exploit in x64 and x86.
+The exploit uses buffer ovferFlow to gain code execution but the exploit trick is different on x64 and x86.
 
 x86
 ----
-in x86 i convert Stack  OvferFlow to  prefect "Write What in Where" condition with "partial stack overflow" and  modify some local variable that was used as destination address for  memcpy  in next code path ,  finaly   abuse   nt!HalDispatchTable for gain code execution with this  prefect W3 condition we can  use Milion way to gain system level like null ACL of other process add ACCESS_MASK to our token ,... 
+On x86 I convert Stack  OvferFlow to  prefect "Write What in Where" condition with "partial stack overflow" and  modify some local variable that was used as destination address for  memcpy  in next code path ,  finaly   abuse   nt!HalDispatchTable for gain code execution with this  prefect W3 condition we can  use Milion way to gain system level like null ACL of other process add ACCESS_MASK to our token ,... 
 saved retuen address was protcted with stack_cookie so we cant modify it
 
 x64

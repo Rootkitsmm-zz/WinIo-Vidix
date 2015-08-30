@@ -1,0 +1,3 @@
+
+int FackDispatchTable();
+void  installhook();

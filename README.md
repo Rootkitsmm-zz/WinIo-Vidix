@@ -1,4 +1,8 @@
 # WinIo-Vidix
+credit to
+
+https://twitter.com/R00tkitSMM (firozimaysam@gmail.com) telegram username : https://telegram.me/firozi
+
 
 Vidix: https://en.wikipedia.org/wiki/Vidix
 WinIo : http://www.internals.com/

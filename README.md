@@ -58,7 +58,9 @@ fffff800`016c6884 488968f8        mov     qword ptr [rax-8],rbp
 >
 When the source or destination operand is a memory operand, the operand must be aligned on a 16-byte boundary or a general-protection exception (#GP) is generated.
 >
+
 and 
+
 >
 Alignment
 Most structures are aligned to their natural alignment. The primary exceptions are the stack pointer and malloc or alloca memory, which are aligned to 16 byte, in order to aid performance. Alignment above 16 bytes must be done manually, but since 16 bytes is a common alignment size for XMM operations, this should suffice for most code. For more information about structure layout and alignment see Types and Storage. For information about the stack layout, see Stack Usage.

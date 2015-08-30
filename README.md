@@ -30,7 +30,7 @@ what i done:
 what payload  do :
 
 1.  call shellcode ( you can use any shellcode to  steal token or disable driver singing enforcement )
-2.  hook PEB->KernelCallbackTable with function that create CMD.exe and  exit -- save exit without BSOD)( i hooked  KernelCallbackTable in user mode  but after ioctl system fix  my hook ?!) so i port it to kernel 
+2.  hook PEB->KernelCallbackTable with function that create CMD.exe and  exit -- safe exit without BSOD)( i hooked  KernelCallbackTable in user mode  but after ioctl system fix  my hook ?!) so i port it to kernel 
 3.  call KeUserModeCallback-> jump to hooked function in user mode  (boom :) )
 
 
@@ -58,7 +58,11 @@ fffff800`016c6884 488968f8        mov     qword ptr [rax-8],rbp
 >
 When the source or destination operand is a memory operand, the operand must be aligned on a 16-byte boundary or a general-protection exception (#GP) is generated.
 >
-
+and 
+>
+Alignment
+Most structures are aligned to their natural alignment. The primary exceptions are the stack pointer and malloc or alloca memory, which are aligned to 16 byte, in order to aid performance. Alignment above 16 bytes must be done manually, but since 16 bytes is a common alignment size for XMM operations, this should suffice for most code. For more information about structure layout and alignment see Types and Storage. For information about the stack layout, see Stack Usage.
+>
 
 so stack address must be  aligned:) i dont  fix this part in my code :))) 
 
